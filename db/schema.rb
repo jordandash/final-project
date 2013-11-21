@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131121164308) do
+ActiveRecord::Schema.define(:version => 20131121172213) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "namespace"
@@ -80,8 +80,9 @@ ActiveRecord::Schema.define(:version => 20131121164308) do
     t.decimal  "pst_rate"
     t.decimal  "gst_rate"
     t.decimal  "hst_rate"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "line_item_id"
   end
 
   create_table "products", :force => true do |t|
