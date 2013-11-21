@@ -5,5 +5,5 @@ class Order < ActiveRecord::Base
 	has_many :products, through: :line_items
 	belongs_to :customer
 
-  validates :name, :category, :price, :stock_quantity, :presence => true
+  validates :customer_id, :status, :presence => true
 end
