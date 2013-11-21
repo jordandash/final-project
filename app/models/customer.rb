@@ -4,6 +4,6 @@ class Customer < ActiveRecord::Base
 	has_many :orders
 	belongs_to :province
 
-	validates :first_name, :last_name, :address, :city, :postal_code, :email, :province_id, :presence => true
+	validates :first_name, :last_name, :address, :city, :postal_code, :email, :country, :province_id, :presence => true
   
 end
