@@ -1,1 +1,7 @@
-<p>tgscdkleuireueueijrfiojreji</p>
+<% if @products.empty? %>
+	<p>Your search for "<%= params[:keywords] %>" is bad and you should feel bad.</p>
+<% elsif params[:keywords].length < 2 %>
+	<p>Please enter at least one full word.</p>
+<% else %>
+	<%= render @products %>
+<% end %>
