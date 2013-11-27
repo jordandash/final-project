@@ -4,12 +4,11 @@
     <%= product.name %>
   </p>
 
-  <p class="price">
-    <%= number_to_currency product.price %>
-  </p>
-
   <%= if product.image_filename != '' then image_tag product.image_filename , {height: 150} end %>
 
+  <p class="price">
+    <strong>Price:</strong> <%= number_to_currency product.price %>
+  </p>
 
   <div class="description">
     <%= product.description %>
