@@ -5,5 +5,6 @@ class LineItem < ActiveRecord::Base
 	belongs_to :product
 
 	validates :quantity, :product_id, :order_id, :price, :stock_quantity, :presence => true
+	validates :price, :stock_quantity, :quantity, :numericality => true
   
 end
