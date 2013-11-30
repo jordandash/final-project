@@ -4,7 +4,13 @@
     <%= product.name %>
   </p>
 
-  <%= if product.image_filename != '' then image_tag product.image_filename , {height: 150} end %>
+  <% if product.image_filename != '' %> 
+    <p class="image">
+      <%= image_tag product.image_filename, {height: 150} %>
+    </p>
+  <% else %>
+    <p class="no_image">No Image Available.</p>  
+  <% end %>
 
   <p class="price">
     <strong>Price:</strong> <%= number_to_currency product.price %>
@@ -13,9 +19,11 @@
   <div class="description">
     <%= product.description %>
   </div>
+
   <% if product.category %>
     <p>
       <strong>Category:</strong> <%= product.category.name %>
     </p>
   <% end %>
+  
 </section>
