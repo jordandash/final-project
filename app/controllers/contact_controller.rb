@@ -1,11 +1,8 @@
-class ProductsController < ApplicationController
+class ContactController < ApplicationController
 	def index
-		@products = Product.all
-		@search   = Product.search(params[:q])	
-	end
-
-	def show
-    @product = Product.find(params[:id])
+		@contacts = Contact.all
+		@contact = @contacts.first
+		@search   = Product.search(params[:q])
 	end
 
 	def search

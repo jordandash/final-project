@@ -1,7 +1,7 @@
 <section class="product">
   
   <p class="name">
-    <%= product.name %>
+    <%= link_to product.name, single_product_path(product) %>
   </p>
 
   <% if product.image_filename != '' %> 
@@ -15,10 +15,6 @@
   <p class="price">
     <strong>Price:</strong> <%= number_to_currency product.price %>
   </p>
-
-  <div class="description">
-    <%= product.description %>
-  </div>
 
   <% if product.category %>
     <p>
