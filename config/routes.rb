@@ -7,6 +7,12 @@ FinalProject::Application.routes.draw do
   match 'search_results' => 'products#search_results', :as =>'search_results', :via => :post
   match 'about' => 'contact#index', :as => :contact, :via => :get
   match 'product/:id' => 'products#show', :as => :single_product, :via => :get
+  match 'cart/:id/add' => "products#add_to_cart", :as => "add_to_cart", :via => :post
+  match 'cart/:id/remove' => "products#remove_from_cart", :as => "remove_from_cart", :via => :post
+  match 'cart' => "products#cart", :as => "cart", :via => :get
+  match 'cart/empty' => "products#empty_cart", as: "empty_cart", :via => :post
+  match 'cart/checkout' => "products#checkout", as: "checkout", :via => :post
+  match 'order' => "products#order", as: "order", :via => :post
 
 
 

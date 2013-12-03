@@ -21,5 +21,7 @@
       <strong>Category:</strong> <%= product.category.name %>
     </p>
   <% end %>
+
+  <%= render partial: "shopping", :locals => {:product => product} %>
   
 </section>
