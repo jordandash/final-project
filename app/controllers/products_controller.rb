@@ -33,6 +33,7 @@ class ProductsController < ApplicationController
 	def remove_from_cart
 		id = params[:id].to_i
 		session[:cart].delete(id)
+		flash[:message] = "Item Removed"
 		redirect_to action: :cart
 	end
 
@@ -64,7 +65,10 @@ class ProductsController < ApplicationController
 			postal_code: params[:postal_code]
 			)
 
-		if @customer.save
+		@itWorked = false
+		@itWorked = @customer.save
+
+		if @itWorked
 			@order = @customer.orders.build(
 				gst_rate: @gst,
 				hst_rate: @hst,

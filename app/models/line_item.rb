@@ -4,7 +4,7 @@ class LineItem < ActiveRecord::Base
 	belongs_to :order
 	belongs_to :product
 
-	validates :quantity, :product_id, :order_id, :price, :stock_quantity, :presence => true
-	validates :price, :stock_quantity, :quantity, :numericality => true
+	validates :quantity, :product_id, :order_id, :price, :presence => true
+	validates :price, :quantity, :numericality => true
   
 end

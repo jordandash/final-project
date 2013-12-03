@@ -1,1 +1,27 @@
-<h1>Your mother</h1>
+<% if @itWorked %>
+
+  <h2>Your order has been placed</h2>
+  <h3>INVOICE</h3>
+
+  <% @order_details.each do |item|  %>
+    <h4>Item: <%= item.name %></h4>
+	<p>Quantity: 1 ~ Price: <%= item.price %></p>
+  <% end %>
+
+  <h4>Subtotal: <%= number_to_currency @subtotal %></h4>
+  <% if @gst > 0.01 %>
+    <p>GST: <%= number_to_currency (@gst * @subtotal) %></p>
+  <% end %>
+  <% if @pst > 0.01 %>
+    <p>GST: <%= number_to_currency (@pst * @subtotal) %></p>
+  <% end %>
+  <% if @hst > 0.01 %>
+    <p>GST: <%= number_to_currency (@hst * @subtotal) %></p>
+  <% end %>
+  <h4>Order Total: <%= number_to_currency @total %></h4>
+  <p>Status: <%= @order.status %></p>
+
+  <% else %>
+    <p>Error with contact details. Please ensure you have properly filled them all out.</p>
+    <%= button_to 'Return to Store', home_path %>
+<% end %>
