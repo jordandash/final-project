@@ -1,4 +1,4 @@
-<section class="product">
+<div class="product">
   
   <p class="name">
     <%= link_to product.name, single_product_path(product) %>
@@ -9,7 +9,9 @@
       <%= image_tag product.image_filename, {height: 150} %>
     </p>
   <% else %>
-    <p class="no_image">No Image Available.</p>  
+    <div class="no_image">
+      <p>No Image Available.</p>  
+    </div>
   <% end %>
 
   <p class="price">
@@ -24,4 +26,4 @@
 
   <%= render partial: "shopping", :locals => {:product => product} %>
   
-</section>
+</div>

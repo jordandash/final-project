@@ -1,11 +1,11 @@
 <div id="cart">
-	<div class="flash"><h4><%= flash.now[:message] %></h4><center></div>
+	<div class="flash"><h4><%= flash.now[:message] %></h4></div>
 	<h1>CART</h1>
   <% if session[:cart].empty? %>
   	<h3>Your cart is empty.</h3>
   	<% else %>
   		<% @cart_contents.each do |product| %>
-  			<div class="item">
+  			<div class="cartproduct">
   				<h3><%= product.name %></h3>
   				<%= image_tag(product.image_filename, width: 100) %>
   				<p><strong>Qty: 1</strong></p>
@@ -16,8 +16,11 @@
 	<% end %>
 	<div id="buttons">
 		<h3>Subtotal: <%= number_to_currency @total %></h3>
-		<%= button_to 'Return to Store', home_path %>
-		<%= button_to 'Empty Cart', empty_cart_path unless session[:cart] == [] %>
-		<%= button_to 'Checkout', checkout_path unless session[:cart] == [] %>
+
+    <ul class="cartoptions">
+      <li><%= button_to 'Return to Store', home_path %></li>
+      <li><%= button_to 'Empty Cart', empty_cart_path unless session[:cart] == [] %></li>
+      <li><%= button_to 'Checkout', checkout_path unless session[:cart] == [] %></li>
+    </ul>
 	</div>
 </div>

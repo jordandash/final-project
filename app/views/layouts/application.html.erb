@@ -7,22 +7,36 @@
   <%= csrf_meta_tags %>
 
 </head>
+
 <body>
-	<h1>Turn The Page</h1>
+	<header>
+		<h1>Turn The Page</h1>
 
-	<div class="search">
-		<%= render 'search' %>
-	</div>
+		<div class="search">
+			<%= render 'search' %>
+		</div>
 
-	<nav>
-		<ul>
-			<li><%= link_to 'Home', home_path %></li>
-			<li><%= link_to 'Cart', cart_path %></li>
-			<li><%= link_to "About Us", contact_path %></li>	
-		</ul>
-	</nav>
+		<nav>
+			<ul>
+				<li><%= link_to 'Home', home_path %></li>
+				<li><%= link_to 'Cart', cart_path %></li>
+				<li><%= link_to "About Us", contact_path %></li>	
+			</ul>
+		</nav>
+	</header>
+	
 
 <%= yield %>
+
+  <footer>
+  	<nav>
+	  <ul>
+		  <li><%= link_to 'Home', home_path %></li>
+		  <li><%= link_to 'Cart', cart_path %></li>
+		  <li><%= link_to "About Us", contact_path %></li>	
+		</ul>
+	</nav>
+  </footer>
 
 </body>
 
